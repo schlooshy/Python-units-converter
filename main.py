@@ -2,8 +2,8 @@ import sys
 
 while True:
 
-    wanttocontinue = input("Would you like to start the units converter? (y/n) : \n")
-    if wanttocontinue.casefold() == "y":
+    wanttostart = input("Would you like to start the units converter? (y/n) : \n")
+    if wanttostart.casefold() == "y":
         print("\n Welcome to the converter! If you would like to go back at any point, please enter 'back'.")
         while True:
             whichconverter = input("\n Which conversion would you like? \n \n For: \n"
@@ -19,6 +19,12 @@ while True:
                                    "\n Grams --> Milligrams 'G-Mg' "
                                    "\n Milligrams --> Kilograms 'Mg-Kg' "
                                    "\n Kilograms --> Milligrams 'Kg-Mg' "
+                                   "\n Kilograms --> Stone 'Kg-St' "
+                                   "\n Stone --> Kilograms 'St-Kg' "
+                                   "\n Stone --> Pounds 'Lb-St' "
+                                   "\n Pounds --> Stone 'Lb-St' "
+                                   "\n Pounds --> Kilograms 'Lb-Kg' "
+                                   "\n Kilograms --> Pounds 'Kg-Lb' "
                                    "\n \n")
             if whichconverter == "back".casefold():
                 break
@@ -166,9 +172,9 @@ while True:
             elif whichconverter.casefold() == "Mg-G".casefold():
                 while True:
                     try:
-                        howmanymilligramstograms = int(input("\n How many milligrams would you like converted into grams? \n "))
+                        howmanymilligramstograms = int(input("\n How many Milligrams would you like converted into Grams? \n "))
                         convertedmilligramstograms = howmanymilligramstograms/1000
-                        print(f"\n {howmanymilligramstograms} milligrams in grams is {convertedmilligramstograms} grams!")
+                        print(f"\n {howmanymilligramstograms} Milligrams in Grams is {convertedmilligramstograms} Grams!")
                         break
                     except ValueError:
                         print("Invalid Input, please enter a valid number!")
@@ -185,9 +191,9 @@ while True:
             elif whichconverter.casefold() == "G-Mg".casefold():
                 while True:
                     try:
-                        howmanygramstomilligrams = int(input("\n How many grams would you like converted into milligrams? \n "))
+                        howmanygramstomilligrams = int(input("\n How many Grams would you like converted into Milligrams? \n "))
                         howmanygramstomilligramsconverted = howmanygramstomilligrams*1000
-                        print(f"\n {howmanygramstomilligrams} grams in milligrams is {howmanygramstomilligramsconverted} milligrams!")
+                        print(f"\n {howmanygramstomilligrams} Grams in Milligrams is {howmanygramstomilligramsconverted} Milligrams!")
                         break
                     except ValueError:
                         print("Invalid Input, please enter a valid number!")
@@ -204,9 +210,9 @@ while True:
             elif whichconverter.casefold() == "Mg-Kg".casefold():
                 while True:
                     try:
-                        howmanymilligramstokilograms = int(input("\n How many milligrams would you like converted into kilograms? \n "))
+                        howmanymilligramstokilograms = int(input("\n How many Milligrams would you like converted into Kilograms? \n "))
                         howmanymilligramstokilogramsconverted = howmanymilligramstokilograms/1000000
-                        print(f"\n {howmanymilligramstokilograms} milligrams in kilograms is {howmanymilligramstokilogramsconverted} kilograms!")
+                        print(f"\n {howmanymilligramstokilograms} Milligrams in Kilograms is {howmanymilligramstokilogramsconverted} Kilograms!")
                         break
                     except ValueError:
                         print("Invalid Input, please enter a valid number!")
@@ -224,9 +230,109 @@ while True:
             elif whichconverter.casefold() == "Kg-Mg".casefold():
                 while True:
                     try:
-                        howmanykilogramstomilligrams = int(input("\n How many kilograms would you like converted into milligrams? \n "))
+                        howmanykilogramstomilligrams = int(input("\n How many Kilograms would you like converted into Milligrams? \n "))
                         howmanykilogramstomilligramsconverted = howmanykilogramstomilligrams*1000000
-                        print(f"\n {howmanykilogramstomilligrams} kilograms in milligrams is {howmanykilogramstomilligramsconverted} milligrams!")
+                        print(f"\n {howmanykilogramstomilligrams} Kilograms in Milligrams is {howmanykilogramstomilligramsconverted} Milligrams!")
+                        break
+                    except ValueError:
+                        print("Invalid Input, please enter a valid number!")
+
+                while True:
+
+                    wantocontinue = input(
+                        "\n Would you like to convert another measurement? ('y' to convert again or any other key to exit)  : \n")
+                    if wantocontinue == "y".casefold():
+                        break
+                    else:
+                        print("Goodbye.")
+                        sys.exit()
+
+            elif whichconverter.casefold() == "Kg-St".casefold():
+                while True:
+                    try:
+                        howmanykilogramstostone = int(input("\n How many Kilograms would you like converted into Stone? \n "))
+                        howmanykilogramstostoneconverted = howmanykilogramstostone/6.35
+                        print(f"\n {howmanykilogramstostone} Kilograms in Stone is {howmanykilogramstostoneconverted} Stone!")
+                        break
+                    except ValueError:
+                        print("Invalid Input, please enter a valid number!")
+
+                while True:
+
+                    wantocontinue = input(
+                        "\n Would you like to convert another measurement? ('y' to convert again or any other key to exit)  : \n")
+                    if wantocontinue == "y".casefold():
+                        break
+                    else:
+                        print("Goodbye.")
+                        sys.exit()
+
+            elif whichconverter.casefold() == "St-Kg".casefold():
+                while True:
+                    try:
+                        howmanystonetokilograms = int(input("\n How many Stone would you like converted into Kilograms? \n "))
+                        howmanystonetokilogramsconverted = howmanystonetokilograms*6.35
+                        print(f"\n {howmanystonetokilograms} Stone in Kilograms is {howmanystonetokilogramsconverted} Kilograms!")
+                        break
+                    except ValueError:
+                        print("Invalid Input, please enter a valid number!")
+
+                while True:
+
+                    wantocontinue = input(
+                        "\n Would you like to convert another measurement? ('y' to convert again or any other key to exit)  : \n")
+                    if wantocontinue == "y".casefold():
+                        break
+                    else:
+                        print("Goodbye.")
+                        sys.exit()
+
+            elif whichconverter.casefold() == "Lb-St".casefold():
+                while True:
+                    try:
+                        howmanypoundstostone = int(input("\n How many Pounds would you like converted into Stone? \n "))
+                        howmanypoundstostoneconverted = howmanypoundstostone/14
+                        print(f"\n {howmanypoundstostone} Pounds in Stone is {howmanypoundstostoneconverted} Stone!")
+                        break
+                    except ValueError:
+                        print("Invalid Input, please enter a valid number!")
+
+                while True:
+
+                    wantocontinue = input(
+                        "\n Would you like to convert another measurement? ('y' to convert again or any other key to exit)  : \n")
+                    if wantocontinue == "y".casefold():
+                        break
+                    else:
+                        print("Goodbye.")
+                        sys.exit()
+
+            elif whichconverter.casefold() == "St-Lb".casefold():
+                while True:
+                    try:
+                        howmanystonetopounds = int(input("\n How many Stone would you like converted into Pounds? \n "))
+                        howmanystonetopoundsconverted = howmanystonetopounds/14
+                        print(f"\n {howmanystonetopounds} Stone in Pounds is {howmanystonetopoundsconverted} Pounds!")
+                        break
+                    except ValueError:
+                        print("Invalid Input, please enter a valid number!")
+
+                while True:
+
+                    wantocontinue = input(
+                        "\n Would you like to convert another measurement? ('y' to convert again or any other key to exit)  : \n")
+                    if wantocontinue == "y".casefold():
+                        break
+                    else:
+                        print("Goodbye.")
+                        sys.exit()
+
+            elif whichconverter.casefold() == "Lb-Kg".casefold():
+                while True:
+                    try:
+                        howmanypoundstokilograms = int(input("\n How many Pounds would you like converted into Kilograms? \n "))
+                        howmanypoundstokilogramsconverted = howmanypoundstokilograms/14
+                        print(f"\n {howmanypoundstokilograms} Pounds in Kilograms is {howmanypoundstokilogramsconverted} Kilograms!")
                         break
                     except ValueError:
                         print("Invalid Input, please enter a valid number!")
@@ -250,13 +356,15 @@ while True:
 
 
 
+
+
             elif whichconverter.casefold() == "back":
                 break
 
 
 
 
-    elif wanttocontinue.casefold() == "n":
+    elif wanttostart.casefold() == "n":
         print("Goodbye!")
         break
 
